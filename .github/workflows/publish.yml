@@ -108,11 +108,11 @@ jobs:
       - name: Build application
         run: pnpm tauri build
 
-      - name: Upload web app
-        uses: actions/upload-pages-artifact@v1
-        if: matrix.platform == 'ubuntu-20.04'
-        with:
-          path: ./dist
+      # - name: Upload web app
+      #   uses: actions/upload-pages-artifact@v1
+      #   if: matrix.platform == 'ubuntu-20.04'
+      #   with:
+      #     path: ./dist
 
       - name: Upload bundles
         uses: actions/upload-artifact@v2
@@ -155,6 +155,6 @@ jobs:
             ./surrealist-${{ github.ref_name }}-linux.deb
             ./surrealist-${{ github.ref_name }}-windows.msi
 
-      - name: Publish web app
-        uses: actions/deploy-pages@v1
-        if: "!contains(github.ref, '-')"
+      # - name: Publish web app
+      #   uses: actions/deploy-pages@v1
+      #   if: "!contains(github.ref, '-')"
